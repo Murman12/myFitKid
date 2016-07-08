@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#dadada">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="85dp">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:src="@drawable/logosmall"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#dadada"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:scaleType="center" />
+
+</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1" >
+
+        <Button
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:background="@drawable/muscle"
+            android:contextClickable="false"
+            android:text="Walk"
+            android:backgroundTint="#a0141414"
+            android:backgroundTintMode="src_over"
+            android:textColor="#ffffff"
+            android:textSize="35dp"
+            android:id="@+id/walkBtn"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/weight"
+            android:backgroundTintMode="src_over"
+            android:backgroundTint="#a0141414"
+            android:textColor="#ffffff"
+            android:text="Exercise"
+            android:textSize="35dp"
+            android:id="@+id/exerciseBtn"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1" >
+
+        <Button
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/accountBtn"
+            android:layout_margin="5dp"
+            android:background="@drawable/heart"
+            android:backgroundTint="#a0141414"
+            android:backgroundTintMode="src_over"
+            android:text="Account"
+            android:textColor="#ffffff"
+            android:textSize="35dp" />
+
+        <Button
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/achieveBtn"
+            android:layout_margin="5dp"
+            android:backgroundTintMode="src_over"
+            android:background="@drawable/goal"
+            android:backgroundTint="#a0141414"
+            android:text="Goals"
+            android:textColor="#ffffff"
+            android:textSize="35dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1" >
+
+        <Button
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/quiz"
+            android:scaleType="fitCenter"
+            android:id="@+id/questBtn"
+            android:layout_margin="5dp"
+            android:background="@drawable/quiz"
+            android:backgroundTint="#a0141414"
+            android:backgroundTintMode="src_over"
+            android:text="Questionnaire"
+            android:textColor="#ffffff"
+            android:textSize="35dp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">myFitKid</string>
+    <string name="action_settings">Settings</string>
+    <string name="feedBackTitle">Please enter your feedback to the developers in the form below:</string>
+    <string name="feedBackName">Your name:</string>
+    <string name="feedBackEmail">Your email address:</string>
+    <string name="feedBackBody">More specifics here</string>
+    <string name="feedBackResponse">Would you like an email response?</string>
+    <string name="feedbackbutton">Send Feedback</string>
+    <string name="feedbacktype">FeedBack</string>
+    <string name="feedbacktype1">Praise</string>
+    <string name="feedbacktype2">Gripe</string>
+    <string name="feedbacktype3">Suggestion</string>
+    <string name="feedbacktype4">Bug</string>
+    <string
+        name="feedbackmessagebody_format">To: The %1$s Department\n\n %2$s\n\n %3$s (%4$s) - %5$s
+    </string>
+    <string
+        name="feedbackmessagebody_responseyes">Requires a response</string>
+    <string
+        name="feedbackmessagebody_responseno">Does not require a response</string>
+    <string
+        name="feedbackmessagesubject_format">Application Feedback (%1$s)</string>
+</resources>
