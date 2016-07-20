@@ -4,14 +4,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logosmall"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomeActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -25,39 +23,40 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".WalkPage"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
+        <activity android:name=".Walk"
+            android:parentActivityName="com.example.lalel.myfitkid.HomeActivity"
+            android:label="Walk"
+            android:logo="@drawable/muscle"
             android:screenOrientation="portrait" >
             <intent-filter>
-                <action android:name="com.example.lalel.myfitkid.WalkPage" />
+                <action android:name="com.example.lalel.myfitkid.Walk" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".AccountPage"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".Achievement"
+            android:parentActivityName="com.example.lalel.myfitkid.HomeActivity"
+            android:label="Account">
             <intent-filter>
-                <action android:name="com.example.lalel.myfitkid.AccountPage" />
+                <action android:name="com.example.lalel.myfitkid.Achievement" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".ExercisePage"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".ExerciseInfo"
+            android:parentActivityName="com.example.lalel.myfitkid.HomeActivity"
+            android:label="Exercise">
             <intent-filter>
-                <action android:name="com.example.lalel.myfitkid.ExercisePage" />
+                <action android:name="com.example.lalel.myfitkid.ExerciseInfo" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".QuestPage"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".Feedback"
+            android:parentActivityName="com.example.lalel.myfitkid.HomeActivity"
+            android:label="Questionnaire">
             <intent-filter>
-                <action android:name="com.example.lalel.myfitkid.QuestPage" />
+                <action android:name="com.example.lalel.myfitkid.Feedback" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

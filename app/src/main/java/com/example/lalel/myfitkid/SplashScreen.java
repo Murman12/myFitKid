@@ -3,6 +3,7 @@ package com.example.lalel.myfitkid;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -11,12 +12,14 @@ import android.widget.ImageView;
 /**
  *
  */
-public class SplashScreen extends Activity {
+public class SplashScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
+        getSupportActionBar().hide();
+
 
         final ImageView iv = (ImageView) findViewById(R.id.imageView2);
         final Animation an = AnimationUtils.loadAnimation(getBaseContext(),R.anim.rotate);
@@ -39,7 +42,6 @@ public class SplashScreen extends Activity {
 
             @Override
             public void onAnimationRepeat(Animation animation) {
-
             }
         });
     }

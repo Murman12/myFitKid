@@ -1,51 +1,54 @@
 package com.example.lalel.myfitkid;
 
-import android.app.Activity;
+
 import android.os.Bundle;
-import android.view.Window;
+import android.support.v7.app.ActionBar;
+import android.util.Log;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.content.Context;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+import android.support.v7.app.AppCompatActivity;
+
 
 
 /**
- *
  */
-public class WalkPage extends Activity {
+public class Walk extends AppCompatActivity {
 
     private TextView textViewX;
     private TextView textViewY;
     private TextView textViewZ;
-
     private TextView textSensitive;
-
     private TextView textViewSteps;
-
     private Button buttonReset;
-
     private SensorManager sensorManager;
     private float acceleration;
-
     private float previousY;
     private float currentY;
     private int numSteps;
-
     private SeekBar seekBar;
     private int threshold;
+    private int walkScore = Integer.valueOf(numSteps);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.walk);
 
+        MySQLiteHelper db = new MySQLiteHelper(this);
+            db.addOrUpdateScore(walkScore);
+            Log.i("score"+ walkScore, "added");
+
+        setContentView(R.layout.walk);
+        //values of the acceleration
         textViewX = (TextView) findViewById(R.id.textViewX);
         textViewY = (TextView) findViewById(R.id.textViewY);
         textViewZ = (TextView) findViewById(R.id.textViewZ);
@@ -87,6 +90,7 @@ public class WalkPage extends Activity {
             if (Math.abs(currentY - previousY) > threshold ) {
                 numSteps++;
                 textViewSteps.setText(String.valueOf(numSteps));
+
             }
 
             textViewX.setText(String.valueOf(x));
@@ -106,7 +110,6 @@ public class WalkPage extends Activity {
         numSteps = 0;
         textViewSteps.setText(String.valueOf(numSteps));
     }
-
     private OnSeekBarChangeListener seekBarListener = new OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -125,4 +128,5 @@ public class WalkPage extends Activity {
 
         }
     };
+
 }

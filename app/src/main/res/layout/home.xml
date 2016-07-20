@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#dadada">
+    android:background="#dadada"
+    tools:context=".HomeActivity">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="85dp">
@@ -67,19 +69,6 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/accountBtn"
-            android:layout_margin="5dp"
-            android:background="@drawable/heart"
-            android:backgroundTint="#a0141414"
-            android:backgroundTintMode="src_over"
-            android:text="Account"
-            android:textColor="#ffffff"
-            android:textSize="35dp" />
-
-        <Button
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:id="@+id/achieveBtn"
             android:layout_margin="5dp"
             android:backgroundTintMode="src_over"
@@ -97,7 +86,7 @@
         android:layout_weight="1" >
 
         <Button
-            android:layout_width="0dip"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/quiz"
