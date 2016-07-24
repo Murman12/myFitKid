@@ -71,11 +71,19 @@ public class Walk extends AppCompatActivity {
         acceleration = 0.00f;
 
         enableAccelerometerListening();
+        onResume();
     }
     private void enableAccelerometerListening() {
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        sensorManager.registerListener(sensorEventListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+        Sensor myAccelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sensorManager.registerListener(sensorEventListener,
+                myAccelerometer,
                 SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener(sensorEventListener);
     }
 
     private SensorEventListener sensorEventListener = new SensorEventListener() {
@@ -90,7 +98,6 @@ public class Walk extends AppCompatActivity {
             if (Math.abs(currentY - previousY) > threshold ) {
                 numSteps++;
                 textViewSteps.setText(String.valueOf(numSteps));
-
             }
 
             textViewX.setText(String.valueOf(x));

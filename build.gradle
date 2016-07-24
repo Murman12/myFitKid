@@ -15,6 +15,10 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+
+        tasks.matching {it instanceof Test}.all {
+            testLogging.events = ["failed", "passed", "skipped"]
+        }
     }
 }
 

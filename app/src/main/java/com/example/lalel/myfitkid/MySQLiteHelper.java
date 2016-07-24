@@ -14,9 +14,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
-    public static final String TABLE_HIGHSCORE = "highscore";
-    public static final String KEY_ID = "_id";
-    public static final String SCORE = "score";
+    private static final String TABLE_HIGHSCORE = "highscore";
+    private static final String KEY_ID = "_id";
+    private static final String SCORE = "score";
     private static final String DATABASE_NAME = "score.db";
     private static final int DATABASE_VERSION = 1;
 
@@ -52,10 +52,12 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         db.insertWithOnConflict(TABLE_HIGHSCORE, null,
                 values, SQLiteDatabase.CONFLICT_REPLACE);
+        db.close();
     }
 
     public int getScore() {
         SQLiteDatabase db = getReadableDatabase();
+
         Cursor c = db.rawQuery("SELECT " + SCORE + " FROM " + TABLE_HIGHSCORE
                 + " WHERE " + KEY_ID + " = 1 ", null);
         if (c !=null && c.moveToFirst()) {
@@ -63,9 +65,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             c.close();
             return i;
         } else {
+            c.close();
             return 0;
         }
+
     }
-
-
 }

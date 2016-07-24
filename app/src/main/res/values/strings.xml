@@ -17,13 +17,9 @@
     <string name="feedbacktype2">Complaint</string>
     <string name="feedbacktype3">Suggestion</string>
     <string name="feedbacktype4">Bug</string>
-    <string
-        name="feedbackmessagebody_format">To: The %1$s Department\n\n %2$s\n\n %3$s (%4$s) - %5$s
-    </string>
-    <string
-        name="feedbackmessagebody_responseyes">Requires a response</string>
-    <string
-        name="feedbackmessagebody_responseno">Does not require a response</string>
-    <string
-        name="feedbackmessagesubject_format">Application Feedback (%1$s)</string>
+    <string name="feedbackmessagebody_format">To: The %1$s Department\n\n %2$s\n\n %3$s (%4$s) - %5$s</string>
+    <string name="feedbackmessagebody_responseyes">Requires a response</string>
+    <string name="feedbackmessagebody_responseno">Does not require a response</string>
+    <string name="feedbackmessagesubject_format">Application Feedback (%1$s)</string>
+
 </resources>

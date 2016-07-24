@@ -17,44 +17,48 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.home);
 
-         Button b1 = (Button) findViewById(R.id.walkBtn);
-         b1.setOnClickListener(new OnClickListener() {
+        Button b1 = (Button) findViewById(R.id.walkBtn);
+        if (b1 != null) {
+            b1.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i1 = new Intent(HomeActivity.this, Walk.class);
+                    startActivity(i1);
+                }
+            });
+        }
 
-             @Override
-             public void onClick(View v) {
-                 Intent i1 = new Intent(HomeActivity.this, Walk.class);
-                 startActivity(i1);
-             }
-         });
+        Button b2 = (Button) findViewById(R.id.exerciseBtn);
+        if (b2 != null) {
+            b2.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i2 = new Intent(HomeActivity.this, ExerciseInfo.class);
+                    startActivity(i2);
+                }
+            });
+        }
+        Button b3 = (Button) findViewById(R.id.achieveBtn);
+        if (b3 != null) {
+            b3.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i3 = new Intent(HomeActivity.this, Achievement.class);
+                    startActivity(i3);
+                }
+            });
+        }
 
-        Button b3 = (Button) findViewById(R.id.exerciseBtn);
-        b3.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent i3 = new Intent(HomeActivity.this, ExerciseInfo.class);
-                startActivity(i3);
-            }
-        });
-        Button b4 = (Button) findViewById(R.id.achieveBtn);
-        b4.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent i4 = new Intent(HomeActivity.this, Achievement.class);
-                startActivity(i4);
-            }
-        });
-
-        Button b5 = (Button) findViewById(R.id.questBtn);
-        b5.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent i5 = new Intent(HomeActivity.this, Feedback.class);
-                startActivity(i5);
-            }
-        });
+        Button b4 = (Button) findViewById(R.id.questBtn);
+        if (b4 != null) {
+            b4.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i4 = new Intent(HomeActivity.this, Feedback.class);
+                    startActivity(i4);
+                }
+            });
+        }
     }
 
 }

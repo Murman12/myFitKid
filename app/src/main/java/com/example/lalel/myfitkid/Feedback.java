@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.CheckBox;
 import android.content.Intent;
@@ -64,7 +65,7 @@ public class Feedback extends AppCompatActivity {
                     ")+"
     );
 
-    private boolean checkEmail(String email) {
+    public boolean checkEmail(String email) {
         return EMAIL_ADDRESS_PATTERN.matcher(email).matches();
     }
 

@@ -64,7 +64,7 @@
             android:layout_height="200dp"
             android:layout_span="4"
             android:gravity="center_vertical|center_horizontal"
-            android:text="---"
+            android:text="0"
             android:textSize="40sp" />
     </TableRow>
 

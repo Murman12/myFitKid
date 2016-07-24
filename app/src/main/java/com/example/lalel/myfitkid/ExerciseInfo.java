@@ -20,7 +20,7 @@ public class ExerciseInfo extends AppCompatActivity {
         setContentView(R.layout.exercise);
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-        PagerAdapter adapter = new CustomPageAdapter(ExerciseInfo.this);
+        PagerAdapter adapter = new CustomPagerAdapter(ExerciseInfo.this);
         viewPager.setAdapter(adapter);
     }
 }

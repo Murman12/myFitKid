@@ -41,8 +41,7 @@ public class Achievement extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.achievement);
 
-        MySQLiteHelper db = new MySQLiteHelper(this);
-        int highScore = db.getScore();
+        int highScore = getScoreFromDatabase();
 
         textScoreInfo = (TextView) findViewById(R.id.viewScoreInfo);
         textScoreInfo.setText("Click the tick image when you've earned an achievement!");
@@ -66,7 +65,6 @@ public class Achievement extends AppCompatActivity {
             public void onClick(View v) {
                 final AlertDialog.Builder helpBuilder =
                         new AlertDialog.Builder(Achievement.this);
-                helpBuilder.setTitle("Your reward is ");
                 helpBuilder.setMessage("Ask your Parent for a Petite Fleur Yogurt!");
                 LayoutInflater inflater = getLayoutInflater();
                 View checkboxLayout = inflater.inflate(R.layout.popwindow1, null);
@@ -87,7 +85,6 @@ public class Achievement extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder helpBuilder = new AlertDialog.Builder(Achievement.this);
-                //helpBuilder.setTitle("Your reward is ");
                 helpBuilder.setMessage("Ask your Parent for a Cheese String!");
                 LayoutInflater inflater = getLayoutInflater();
                 View checkboxLayout = inflater.inflate(R.layout.popwindow2, null);
@@ -106,7 +103,6 @@ public class Achievement extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder helpBuilder = new AlertDialog.Builder(Achievement.this);
-                //helpBuilder.setTitle("Your reward is ");
                 helpBuilder.setMessage("Ask your Parent for StrawBerries!");
                 LayoutInflater inflater = getLayoutInflater();
                 View checkboxLayout = inflater.inflate(R.layout.popwindow3, null);
@@ -126,7 +122,6 @@ public class Achievement extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder helpBuilder = new AlertDialog.Builder(Achievement.this);
-               // helpBuilder.setTitle("Your reward is ");
                 helpBuilder.setMessage("Ask your Parent for an Apple!");
                 LayoutInflater inflater = getLayoutInflater();
                 View checkboxLayout = inflater.inflate(R.layout.popwindow4, null);
@@ -146,7 +141,6 @@ public class Achievement extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final AlertDialog.Builder helpBuilder = new AlertDialog.Builder(Achievement.this);
-               // helpBuilder.setTitle("Your reward is ");
                 helpBuilder.setMessage("Ask your Parent for a Rice Krispie Square!");
                 LayoutInflater inflater = getLayoutInflater();
                 View checkboxLayout = inflater.inflate(R.layout.popwindow5, null);
@@ -161,26 +155,34 @@ public class Achievement extends AppCompatActivity {
                 helpDialog.show();
             }
         });
+        displayImage(highScore);
 
-        if (highScore >= 250) {
+    }
+
+    public int getScoreFromDatabase () {
+        MySQLiteHelper db = new MySQLiteHelper(this);
+        return db.getScore();
+    }
+
+    public void displayImage(int score) {
+        if (score >= 250) {
             achieved1.setVisibility(View.VISIBLE);
 
-        } if (highScore >= 1000) {
+        } if (score >= 1000) {
             achieved2.setVisibility(View.VISIBLE);
 
-        }  if (highScore >= 3000) {
+        }  if (score >= 3000) {
             achieved3.setVisibility(View.VISIBLE);
 
-        }  if (highScore >= 6000) {
+        }  if (score >= 6000) {
             achieved4.setVisibility(View.VISIBLE);
 
-        }  if (highScore >= 10000) {
+        }  if (score >= 10000) {
             achieved5.setVisibility(View.VISIBLE);
 
         } else {
 
         }
-
     }
 }
 
